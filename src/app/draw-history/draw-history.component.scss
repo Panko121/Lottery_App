@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+table th{
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: black;
+}
+
+table td{
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgb(70, 69, 69);
+}
+
+.hide{
+  display: none;
+}
+
+.noDataInfo{
+    padding: 1.5rem;
+    padding-left: 1.5rem;
+
+}
+

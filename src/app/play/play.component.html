@@ -1,0 +1,17 @@
+<div class="play-container">
+    <div class="button-wrapper">
+        <button mat-raised-button color="primary" class="button-draw" (click)="playButton()" *ngIf="!isClicked">
+            Draw!
+        </button>
+        <button mat-raised-button color="primary" class="button-draw" (click)="playButton()" *ngIf="isClicked">
+            Draw again!
+        </button>
+    </div>
+    <div class="numbers-container" >
+        <mat-card-title *ngIf="isClicked">Your numbers:</mat-card-title>
+        <mat-card-subtitle *ngIf="isClicked">{{currentNumbers}}</mat-card-subtitle>
+    </div>
+</div>
+
+
+

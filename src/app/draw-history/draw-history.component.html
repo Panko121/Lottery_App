@@ -1,0 +1,25 @@
+<div>
+    <table mat-table [dataSource]="historyArray" class="mat-elevation-z8">
+        <ng-container matColumnDef="lotteryNumbers">
+            <th mat-header-cell *matHeaderCellDef> Lottery Numbers </th>
+            <td mat-cell *matCellDef="let lottery"> {{lottery.numbers}} </td>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Lottery Date </th>
+            <td mat-cell *matCellDef="let lottery"> {{lottery.date}} </td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef> Lottery Time </th>
+            <td mat-cell *matCellDef="let lottery"> {{lottery.time}} </td>
+          </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <ng-container  matColumnDef="noData" >
+        <mat-footer-cell class = "noDataInfo" *matFooterCellDef colspan="8">
+            No Data to display...
+        </mat-footer-cell>
+    </ng-container>
+    <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide': !(historyArray.length==0)}"></tr>
+    </table>
+</div>
