@@ -1,25 +1,31 @@
+*{
+    background-color: #86BC24;
+}
 ul{
     list-style: none;
     margin: 1rem;
-}
-a{
-    text-decoration: none;
+    white-space: nowrap;
+    min-width: 24rem;
 }
 
 .navbar{
     font-size: 1.2rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
+    color:#0F0B0B;
 }
 
 .navbar .container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
 }
 
 .navbar .logo{
     font-size: 2rem;
     margin-left: 2rem;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    white-space: nowrap;
+    align-self: flex-start;
 }
 
 .navbar .nav{
@@ -27,10 +33,27 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
-.navbar .nav a{
+.navbar .container .nav li a{
+    text-decoration: none;
+    color: #0F0B0B;
     padding: 0 2rem 0 2rem;
 }
-.navbar .nav a:hover{
+
+.navbar .container .nav li a:hover{
+    text-decoration: none;
     color: #555;
+}
+
+@media only screen and (max-width: 650px) {
+    .navbar{
+        min-width: 28rem;
+    }
+    .navbar .logo{
+        display: none;
+    }
+    .navbar .nav .li{
+        display: inline-block;
+    }
 }

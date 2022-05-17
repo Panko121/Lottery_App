@@ -8,12 +8,11 @@ import { DrawNumbersService } from '../services/draw-numbers.service';
   styleUrls: ['./play.component.scss']
 })
 export class PlayComponent implements OnInit {
-  isClicked = false;
+  isClicked:boolean = false;
+  isNull:boolean = true;
   numbersArray: string[] = [];
-  arrayHistory: any = [];
-  currentData: any;
   currentNumbers: any;
-  dod:any = [];
+
   constructor(private lotsNumbers: DrawNumbersService) {
   }
 
@@ -30,22 +29,24 @@ export class PlayComponent implements OnInit {
       }
     }
     return numbersArray.join(" ")
-    //return numbersArray
   }
 
-
-
   playButton(){
+    this.isPlaceholderEmpty();
     this.isClicked = true;
     this.lotsNumbers.importedNumbers.push(this.drawNumbers());
     this.lotsNumbers.makeHistory();
-    //
+
     this.numbersArray = this.lotsNumbers.importedNumbers;
     this.currentNumbers = this.numbersArray[this.numbersArray.length-1];
-    
+
     // Checks
-    console.log('importedNumbers')
-    console.log(this.lotsNumbers.importedNumbers)
+    //console.log('importedNumbers')
+   // console.log(this.lotsNumbers.importedNumbers)
+  }
+
+  isPlaceholderEmpty(){
+    this.currentNumbers==null ? this.isNull = true : this.isNull
   }
 
 

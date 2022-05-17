@@ -1,8 +1,6 @@
-import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { of } from 'rxjs';
-//import { FormControl, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +36,9 @@ export class DrawNumbersService {
       date: this.getDate(),
     }
     this.drawHistoryArray.push(this.historyObject);
-    console.log('drawHistory');
-    console.log(this.drawHistoryArray);
+    //Checks
+    //console.log('drawHistory');
+    //console.log(this.drawHistoryArray);
     return this.drawHistoryArray;
   }
 
