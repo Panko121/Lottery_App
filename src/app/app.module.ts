@@ -8,6 +8,8 @@ import { DrawHistoryComponent } from './draw-history/draw-history.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayComponent } from './play/play.component';
 import { DrawNumbersService } from './services/draw-numbers.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialsModule } from './materials/materials/materials.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DrawNumbersService } from './services/draw-numbers.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MaterialsModule
   ],
   providers: [DrawNumbersService],
   bootstrap: [AppComponent]

@@ -8,23 +8,12 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class DrawNumbersService {
-  drawHistoryArray:any = [];
-  //numbersArray:number[] = [];
-  importedNumbers:string[] = [];
+  drawHistoryArray: any = [];
+  importedNumbers: string[] = [];
+
+  historyObject: any;
 
   constructor() {}
-/*
-  drawNumbers(){
-    let numbersArray:number[] = [];
-    while(numbersArray.length < 5){
-      this.number = Math.floor(Math.random() * (50 + 1));
-      if(!numbersArray.includes(this.number)){
-        numbersArray.push(this.number)
-      }
-    }
-    //console.log(numbersArray)
-    return numbersArray.join(",");
-  }*/
 
   getDate(){
     return new Date().toLocaleDateString("pl", {
@@ -43,17 +32,19 @@ export class DrawNumbersService {
   }
 
   makeHistory(){
-    let historyObject ={
+    this.historyObject ={
       numbers: this.importedNumbers[this.importedNumbers.length-1],
       time: this.getTime(),
       date: this.getDate(),
     }
-    this.drawHistoryArray.push(historyObject);
+    this.drawHistoryArray.push(this.historyObject);
     console.log('drawHistory');
     console.log(this.drawHistoryArray);
-    return of(this.drawHistoryArray);
+    return this.drawHistoryArray;
   }
 
-
+  showHistory(){
+    return of(this.drawHistoryArray);
+  }
 
 }

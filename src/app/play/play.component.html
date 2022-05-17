@@ -1,5 +1,8 @@
-<button class="buttton-draw" (click)="playButton()">
+<button class="buttton-draw" (click)="playButton()" *ngIf="!isClicked">
     Draw!
+</button>
+<button class="buttton-draw" (click)="playButton()" *ngIf="isClicked">
+    Draw again!
 </button>
 <div class="numbers-container">
     <ul>

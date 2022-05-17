@@ -36,6 +36,7 @@ export class PlayComponent implements OnInit {
 
 
   playButton(){
+    this.isClicked = true;
     this.lotsNumbers.importedNumbers.push(this.drawNumbers());
     this.lotsNumbers.makeHistory();
     //
