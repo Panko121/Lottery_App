@@ -28,7 +28,7 @@ export class PlayComponent implements OnInit {
         numbersArray.push(number);
       }
     }
-    return numbersArray.join(" ")
+    return numbersArray.join(" - ")
   }
 
   playButton(){
