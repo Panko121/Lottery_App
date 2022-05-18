@@ -2,7 +2,7 @@
 .play-container{
     min-height: 93vh;
     display: grid;
-    align-items: center;
+    align-content: center;
     justify-content: center;
 }
 .play-container .button-wrapper{
@@ -10,6 +10,7 @@
     justify-content: center;
     text-align: center;
     margin: auto;
+    margin-top: 5rem;
 }
 .play-container .button-wrapper .button-draw{
     min-width: 140px;
@@ -17,20 +18,28 @@
     font-size: 3rem;
     background-color: #86bc25;
 }
+.play-container{
+   display: flex;
+   flex-direction: column;
+}
 
 .play-container .numbers-container{
     white-space: nowrap;
-    display:grid;
+    display: flex;
+    flex-direction: column;
+
     text-align: center;
     margin: auto;
-    position: relative;
-    bottom: 15rem;
+    align-items: center;
+    padding-bottom: 50vh;
+    margin-top: 4rem;
 }
 
 .play-container .numbers-container mat-card-title{
     font-size: 2.5rem;
     color: black;
-    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    margin-top: 1rem;
 }
 
 .play-container .numbers-container mat-card-subtitle{
