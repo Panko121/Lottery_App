@@ -30,18 +30,24 @@ export class DrawNumbersService {
   }
 
   makeHistory(){
-    this.historyObject ={
-      numbers: this.importedNumbers[this.importedNumbers.length-1],
-      time: this.getTime(),
-      date: this.getDate(),
-    }
-    this.drawHistoryArray.push(this.historyObject);
+      this.historyObject = {
+        numbers: this.importedNumbers[this.importedNumbers.length-1],
+        time: this.getTime(),
+        date: this.getDate(),
+      }
+      console.log(this.importedNumbers)
+      console.log(this.importedNumbers[this.importedNumbers.length-1])
+      console.log(this.importedNumbers[this.importedNumbers.length-2])
+    this.drawHistoryArray.push(this.historyObject)
+
     //Checks
-    //console.log('drawHistory');
-    //console.log(this.drawHistoryArray);
+    console.log('drawHistory');
+    console.log(this.drawHistoryArray);
+    //return this.drawHistoryArray;
+  }
+  showNOH(){
     return this.drawHistoryArray;
   }
-
   showHistory(){
     return of(this.drawHistoryArray);
   }
