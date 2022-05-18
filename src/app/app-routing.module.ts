@@ -4,6 +4,7 @@ import { DrawHistoryComponent } from './draw-history/draw-history.component';
 import { PlayComponent } from './play/play.component';
 
 const routes: Routes = [
+  {path: '', component: PlayComponent},
   {path: 'play', component: PlayComponent},
   {path: 'draw-history', component: DrawHistoryComponent},
 ];
